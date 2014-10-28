@@ -29,6 +29,7 @@ public class DriverWrapper {
             eDriver  = new EventFiringWebDriver(new FirefoxDriver());
             break;
      }
+        
       eDriver.register(new MyEventListener());
       driver = eDriver;
       driver.manage().window().maximize();
