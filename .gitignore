@@ -11,8 +11,6 @@
 .project
 .settings/
 test-output
-tmp
-target
 ScreenShots/
 
 # Intellij
