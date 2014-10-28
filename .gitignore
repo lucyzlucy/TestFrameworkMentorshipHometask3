@@ -10,8 +10,9 @@
 .classpath
 .project
 .settings/
-test-output/*
-test-output/*/*
+test-output
+tmp
+target
 ScreenShots/
 
 # Intellij

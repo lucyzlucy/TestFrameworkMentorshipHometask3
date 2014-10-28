@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17512" started-at="2014-10-28T13:51:36Z" finished-at="2014-10-28T13:51:54Z">
+  <suite name="Default suite" duration-ms="17393" started-at="2014-10-28T13:56:10Z" finished-at="2014-10-28T13:56:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17512" started-at="2014-10-28T13:51:36Z" finished-at="2014-10-28T13:51:54Z">
+    <test name="Default test" duration-ms="17393" started-at="2014-10-28T13:56:10Z" finished-at="2014-10-28T13:56:27Z">
       <class name="TestFolder.TestClass">
-        <test-method status="FAIL" signature="testsomething()[pri:0, instance:TestFolder.TestClass@7717cddf]" name="testsomething" duration-ms="16082" started-at="2014-10-28T15:51:36Z" finished-at="2014-10-28T15:51:53Z">
+        <test-method status="FAIL" signature="testsomething()[pri:0, instance:TestFolder.TestClass@7717cddf]" name="testsomething" duration-ms="16002" started-at="2014-10-28T15:56:10Z" finished-at="2014-10-28T15:56:26Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[[Fail URL] 
