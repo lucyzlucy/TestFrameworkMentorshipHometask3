@@ -1,4 +1,4 @@
-package Core;
+package core;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import Utils.Propertiator;
+import utils.Propertiator;
 
 public class DriverWrapper {
     private static WebDriver driver = null;

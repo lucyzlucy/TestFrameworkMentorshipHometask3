@@ -1,4 +1,4 @@
-package Page;
+package page;
 
 public class BasePage {
 

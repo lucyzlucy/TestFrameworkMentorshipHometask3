@@ -1,6 +1,6 @@
-package Page;
+package page;
 
-import Core.DriverWrapper;
+import core.DriverWrapper;
 
 public class SoftServeMain extends BasePage {
     public static final String URL_ADDRESS = "http://softserve1.ua/";

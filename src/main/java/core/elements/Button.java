@@ -1,8 +1,8 @@
-package Core.Elements;
+package core.elements;
 
 import org.openqa.selenium.WebElement;
 
-import Core.Interfaces.Elements.IButton;
+import core.interfaces.elements.IButton;
 
 public class Button implements IButton {
     WebElement base;

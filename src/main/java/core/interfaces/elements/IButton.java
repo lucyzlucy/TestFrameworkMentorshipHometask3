@@ -1,4 +1,4 @@
-package Core.Interfaces.Elements;
+package core.interfaces.elements;
 
 public interface IButton {
     public void click();

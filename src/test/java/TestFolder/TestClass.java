@@ -1,14 +1,14 @@
 package TestFolder;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import navigations.Navitation;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Core.Listener;
-import Navigations.Navitation;
-import Page.MainPage;
-import Page.SoftServeMain;
+import page.MainPage;
+import page.SoftServeMain;
+import core.Listener;
 
 @Listeners(Listener.class)
 public class TestClass {

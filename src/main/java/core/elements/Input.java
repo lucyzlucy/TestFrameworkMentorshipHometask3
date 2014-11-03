@@ -1,8 +1,8 @@
-package Core.Elements;
+package core.elements;
 
 import org.openqa.selenium.WebElement;
 
-import Core.Interfaces.Elements.IInput;
+import core.interfaces.elements.IInput;
 
 public class Input implements IInput {
         WebElement base;

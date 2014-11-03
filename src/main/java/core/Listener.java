@@ -1,4 +1,4 @@
-package Core;
+package core;
 
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
@@ -9,7 +9,7 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-import Utils.ScreenshotUtils;
+import utils.ScreenshotUtils;
  
 public class Listener implements ITestListener, ISuiteListener, IInvokedMethodListener {
  

@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -60,5 +60,11 @@ public class StringGenerateUtils {
             return (char) (base + rnd % 26);
         default: return '?';
         }
+    }
+    
+    public static String getEmail() {
+        StringBuilder str = new StringBuilder();
+        str.append(getRandomLiteralString(5)).append("@").append(getRandomLiteralString(3)).append(".com");
+        return str.toString();
     }
 }

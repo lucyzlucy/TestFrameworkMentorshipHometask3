@@ -1,12 +1,12 @@
-package Page;
+package page;
 
 import lombok.Getter;
 
 import org.openqa.selenium.By;
 
-import Core.ElementWrapper;
-import Core.Log;
-import Core.Elements.Input;
+import core.ElementWrapper;
+import core.Log;
+import core.elements.Input;
 
 public class MainPage extends BasePage{
     public static final String FIND_MESSAGE = "selenium";

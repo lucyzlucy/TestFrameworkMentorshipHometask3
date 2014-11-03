@@ -1,9 +1,9 @@
-package Navigations;
+package navigations;
 
-import Core.DriverWrapper;
-import Core.Log;
-import Page.MainPage;
-import Page.SoftServeMain;
+import page.MainPage;
+import page.SoftServeMain;
+import core.DriverWrapper;
+import core.Log;
 
 public class Navitation {
     
