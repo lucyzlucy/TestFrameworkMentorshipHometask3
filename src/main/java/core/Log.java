@@ -3,14 +3,28 @@ package core;
 
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import enums.LogType;
 public class Log {
     private static Logger logger = null;
     public static Logger setName(String name) {
-        logger = LoggerFactory.getLogger(String.format("%s", name));
+        logger = Logger.getLogger(String.format("%s", name));
+        Properties props = new Properties();
+        FileInputStream istream = null;
+        try {
+          istream = new FileInputStream("log4j.properties");
+          props.load(istream);
+          istream.close();
+        }
+        catch(Exception e) {}
+        PropertyConfigurator.configure(props);
         return logger;
     }
     

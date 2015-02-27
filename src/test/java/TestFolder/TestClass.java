@@ -17,4 +17,5 @@ public class TestClass {
         Navitation.toMainPage().writeButton(MainPage.FIND_MESSAGE);
         assertThat(Navitation.toSoftserve().getUrl()).as("Fail URL").isEqualTo(SoftServeMain.URL_ADDRESS);
     }
+
 }
