@@ -19,9 +19,9 @@ public class Log {
         Properties props = new Properties();
         FileInputStream istream = null;
         try {
-          istream = new FileInputStream("log4j.properties");
-          props.load(istream);
-          istream.close();
+            istream = new FileInputStream("log4j.properties");
+            props.load(istream);
+            istream.close();
         }
         catch(Exception e) {}
         PropertyConfigurator.configure(props);
