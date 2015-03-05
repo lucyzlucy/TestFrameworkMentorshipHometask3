@@ -17,7 +17,7 @@ public class Navitation {
     }
     public static SoftServeMain toSoftserve() {
         Log.log("navigation to softserve.com");
-        DriverWrapper.getDriver().navigate().to("http://softserve.ua");
+        DriverWrapper.getDriver().navigate().to(SoftServeMain.URL_ADDRESS);
         return new SoftServeMain();
     }
 }

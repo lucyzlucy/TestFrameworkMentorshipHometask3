@@ -14,6 +14,7 @@ import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
 import utils.DateUtils;
+import utils.Propertiator;
 import utils.ScreenshotUtils;
 import enums.LogType;
  
@@ -48,23 +49,24 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     // This belongs to ITestListener and will execute, once the Test set/batch is finished
  
     public void onFinish(ITestContext arg0) {
-        if(java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") <= 0) {
+        String type = Propertiator.getPropertie("email");
+        if(Boolean.parseBoolean(type)) {
             StringBuilder result = new StringBuilder();
             for(String res : suiteResult) {
                 result.append(res);
             }
             Log.log(result.toString(), LogType.ERROR);
-            DriverWrapper.getDriver().quit();
         }
+            DriverWrapper.getDriver().quit();
        // Reporter.log("Completed executing test " + arg0.getName(), true);
- 
     }
  
     // This belongs to ITestListener and will execute only when the test is pass
  
     public void onTestSuccess(ITestResult arg0) {
         //TODO String.format
-        suiteResult.add("\r\n" + arg0.getMethod().getMethodName() + " has passed on "+ DateUtils.formatedDate(arg0.getEndMillis()) + "\r\n");
+        String temp = String.format("\r\n %s has passed on %s \r\n", arg0.getMethod().getMethodName(), DateUtils.formatedDate(arg0.getEndMillis()));
+        suiteResult.add(temp);
         Log.log(String.valueOf(arg0.getEndMillis()-arg0.getStartMillis()));//milliseconds of running
         // This is calling the printTestResults method
  
@@ -79,8 +81,8 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
        // if(java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") <= 0) {
            // Log.log("Error has occured in test"+ arg0.getMethod().getMethodName() + " on " + DateUtils.formatedDate(arg0.getEndMillis()) + " " + arg0.getThrowable().getMessage(), LogType.ERROR);
        // }
-        //TODO String.format
-        suiteResult.add("\r\nError has occured in test"+ arg0.getMethod().getMethodName() + " on " + DateUtils.formatedDate(arg0.getEndMillis()) + "\r\n" + arg0.getThrowable().getMessage()+"\r\n");
+        String temp = String.format("\r\n %s has passed on %s \r\n %s \r\n", arg0.getMethod().getMethodName(), DateUtils.formatedDate(arg0.getEndMillis()), arg0.getThrowable().getMessage());
+        suiteResult.add(temp);
          ScreenshotUtils.getScreenshot(DriverWrapper.getDriver(), arg0.getMethod().getMethodName());
          //printTestResults(arg0);
      }
