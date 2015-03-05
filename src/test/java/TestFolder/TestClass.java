@@ -17,5 +17,15 @@ public class TestClass {
         Navitation.toMainPage().writeButton(MainPage.FIND_MESSAGE);
         assertThat(Navitation.toSoftserve().getUrl()).as("Fail URL").isEqualTo(SoftServeMain.URL_ADDRESS);
     }
+    @Test
+    public void testsomething1() {
+        Navitation.toMainPage().writeButton(MainPage.FIND_MESSAGE);
+        assertThat(Navitation.toSoftserve().getUrl()).as("Fail URL").isEqualTo(SoftServeMain.URL_ADDRESS_FAIL);
+    }
+    @Test
+    public void testsomething2() {
+        Navitation.toMainPage().writeButton(MainPage.FIND_MESSAGE);
+        assertThat(Navitation.toSoftserve().getUrl()).as("Fail URL").isEqualTo(SoftServeMain.URL_ADDRESS_FAIL);
+    }
 
 }

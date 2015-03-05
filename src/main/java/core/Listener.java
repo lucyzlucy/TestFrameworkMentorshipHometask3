@@ -1,5 +1,9 @@
 package core;
 
+
+import java.util.LinkedList;
+import java.util.List;
+
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ISuite;
@@ -9,10 +13,12 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
+import utils.DateUtils;
 import utils.ScreenshotUtils;
+import enums.LogType;
  
 public class Listener implements ITestListener, ISuiteListener, IInvokedMethodListener {
- 
+    protected List<String> suiteResult = new LinkedList<String>();
     // This belongs to ISuiteListener and will execute before the Suite start
  
     //@Override
@@ -26,10 +32,9 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
  
     //@Override
      public void onFinish(ISuite arg0) {
-         
+       
         //Reporter.log("About to end executing Suite " + arg0.getName(), true);
- 
-    }
+     }
  
     // This belongs to ITestListener and will execute before starting of Test set/batch 
  
@@ -43,7 +48,14 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     // This belongs to ITestListener and will execute, once the Test set/batch is finished
  
     public void onFinish(ITestContext arg0) {
-        DriverWrapper.getDriver().quit();
+        if(java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") <= 0) {
+            StringBuilder result = new StringBuilder();
+            for(String res : suiteResult) {
+                result.append(res);
+            }
+            Log.log(result.toString(), LogType.ERROR);
+            DriverWrapper.getDriver().quit();
+        }
        // Reporter.log("Completed executing test " + arg0.getName(), true);
  
     }
@@ -51,6 +63,8 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     // This belongs to ITestListener and will execute only when the test is pass
  
     public void onTestSuccess(ITestResult arg0) {
+        //TODO String.format
+        suiteResult.add("\r\n" + arg0.getMethod().getMethodName() + " has passed on "+ DateUtils.formatedDate(arg0.getEndMillis()) + "\r\n");
         Log.log(String.valueOf(arg0.getEndMillis()-arg0.getStartMillis()));//milliseconds of running
         // This is calling the printTestResults method
  
@@ -61,9 +75,14 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     // This belongs to ITestListener and will execute only on the event of fail test
  
     public void onTestFailure(ITestResult arg0) {
-        
+      //don't send email when executed in debug mod
+       // if(java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") <= 0) {
+           // Log.log("Error has occured in test"+ arg0.getMethod().getMethodName() + " on " + DateUtils.formatedDate(arg0.getEndMillis()) + " " + arg0.getThrowable().getMessage(), LogType.ERROR);
+       // }
+        //TODO String.format
+        suiteResult.add("\r\nError has occured in test"+ arg0.getMethod().getMethodName() + " on " + DateUtils.formatedDate(arg0.getEndMillis()) + "\r\n" + arg0.getThrowable().getMessage()+"\r\n");
          ScreenshotUtils.getScreenshot(DriverWrapper.getDriver(), arg0.getMethod().getMethodName());
-       //  printTestResults(arg0);
+         //printTestResults(arg0);
      }
  
     // This belongs to ITestListener and will execute before the main test start (@Test)

@@ -11,4 +11,18 @@ public class DateUtils {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
         return dateFormat.format(date);
     }
+    
+    public static String formatDate(Date date) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        return dateFormat.format(date);
+    }
+    
+    public static String formatDate(Date date, String format) {
+        DateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.format(date);
+    }
+    
+    public static String formatedDate(long miliseconds) {
+        return formatDate(new Date(miliseconds), "yyyy-MM-dd hh:mm");
+    }
 }
