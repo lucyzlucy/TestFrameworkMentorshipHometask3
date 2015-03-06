@@ -2,6 +2,7 @@ package core;
 
 import io.selendroid.client.SelendroidDriver;
 import io.selendroid.common.SelendroidCapabilities;
+import io.selendroid.common.device.DeviceTargetPlatform;
 import io.selendroid.standalone.SelendroidConfiguration;
 import io.selendroid.standalone.SelendroidLauncher;
 
@@ -37,6 +38,7 @@ public class DriverWrapper {
             SelendroidLauncher selendroidServer = new SelendroidLauncher(config);
             selendroidServer.launchSelendroid();
             SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.15.0");
+            caps.setPlatformVersion(DeviceTargetPlatform.ANDROID19);
             try {
                 sDriver = new SelendroidDriver(caps);
             } catch (Exception e) {
