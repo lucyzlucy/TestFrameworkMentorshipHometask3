@@ -1,7 +1,9 @@
-package navigations;
+package ApplicationRelated.navigations;
 
-import page.MainPage;
-import page.SoftServeMain;
+
+import ApplicationRelated.pages.test.MainPage;
+import ApplicationRelated.pages.test.SoftServeMain;
+
 import core.DriverWrapper;
 import core.Log;
 
@@ -20,4 +22,5 @@ public class Navitation {
         DriverWrapper.getDriver().navigate().to(SoftServeMain.URL_ADDRESS);
         return new SoftServeMain();
     }
+
 }
