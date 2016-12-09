@@ -12,4 +12,7 @@ public class Input implements IInput {
     public void write(String str) {
         base.sendKeys(str);
     }
+    public String getSearchTitle() {
+        return base.getAttribute("title");
+    }
 }

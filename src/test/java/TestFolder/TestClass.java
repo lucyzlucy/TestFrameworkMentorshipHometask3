@@ -3,6 +3,8 @@ package TestFolder;
 import static org.assertj.core.api.Assertions.assertThat;
 import ApplicationRelated.navigations.Navitation;
 
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,13 +34,4 @@ public class TestClass {
         assertThat(Navitation.toSoftserve().getUrl()).as("Fail URL").isEqualTo(SoftServeMain.URL_ADDRESS_FAIL);
     }
 
-    @Test
-    public void assertUserAccountCanRegistered() throws Exception {
-        WebDriver driver = DriverWrapper.getDriver();
-        WebElement inputField = driver.findElement(By.id("my_text_field"));
-        //enter a text into the text field
-        inputField.sendKeys("Selendroid");
-        //check if the text has been entered into the text field
-        assertThat(true);
-    }
 }
