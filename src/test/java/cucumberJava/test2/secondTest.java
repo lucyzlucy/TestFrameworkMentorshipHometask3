@@ -1,4 +1,4 @@
-package cucumberJava.test.test2;
+package cucumberJava.test2;
 
 import ApplicationRelated.navigations.Navitation;
 import ApplicationRelated.pages.test.SearchResultPage;

@@ -1,4 +1,4 @@
-package cucumberJava.test.test2;
+package cucumberJava.test2;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
