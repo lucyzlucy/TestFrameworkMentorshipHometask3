@@ -8,10 +8,7 @@ import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 
 
 public class MyEventListener extends AbstractWebDriverEventListener {
-    @Override
-    public void afterChangeValueOf(WebElement arg0, WebDriver arg1) {
-        // TODO Auto-generated method stub      
-    }
+
     @Override
     public void afterClickOn(WebElement arg0, WebDriver arg1) {
         // TODO Auto-generated method stub      
@@ -37,10 +34,7 @@ public class MyEventListener extends AbstractWebDriverEventListener {
        
         // TODO Auto-generated method stub      
     }
-    @Override
-    public void beforeChangeValueOf(WebElement arg0, WebDriver arg1) {
-        // TODO Auto-generated method stub      
-    }
+
     @Override
     public void beforeClickOn(WebElement arg0, WebDriver arg1) {
         // TODO Auto-generated method stub      

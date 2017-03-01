@@ -20,15 +20,15 @@ public class steps {
     public void selenium() {
         Log.log("In selenium module");
     }
-    @When("user googles <address>")
-    public void googles(@Named("address") String address) {
+    @When("user googles $address")
+    public void googles(String address) {
         searchResultPage = Navitation.toMainPage().writeButton(address);
 
     }
 
     @Then("$address search page opened")
     public void addressSearchPageOpened(String address){
-        assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Search");
+        assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Пошук");
     }
 
 }
