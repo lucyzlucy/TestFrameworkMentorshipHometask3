@@ -1,5 +1,5 @@
 package core.interfaces.elements;
 
-public interface IInput {
+public interface IInput extends IElement{
     public void write(String str);
 }

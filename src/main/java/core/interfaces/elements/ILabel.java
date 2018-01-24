@@ -1,5 +1,5 @@
 package core.interfaces.elements;
 
-public interface ILabel {
+public interface ILabel extends IElement{
 
 }

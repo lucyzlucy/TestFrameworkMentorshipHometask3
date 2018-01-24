@@ -15,4 +15,5 @@ public class Input implements IInput {
     public String getSearchTitle() {
         return base.getAttribute("title");
     }
+    public void submit(){base.submit();}
 }

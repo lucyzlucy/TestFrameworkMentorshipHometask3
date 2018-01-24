@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 import com.google.common.base.Function;
 
+import java.util.List;
+
 public class ElementWrapper {
 
     public static WebElement find(final By by) {
@@ -14,5 +16,12 @@ public class ElementWrapper {
                 return AutomationWait.waitVisibleClickable(driver.findElement(by));
               }
             });
+    }
+    public static WebElement findOne(final By by) {
+        return DriverWrapper.getDriver().findElement(by);
+    }
+
+    public static List<WebElement> findList(final By by) {
+        return DriverWrapper.getDriver().findElements(by);
     }
 }

@@ -1,12 +1,10 @@
 package ApplicationRelated.pages.test;
 
-import lombok.Getter;
-
-import org.openqa.selenium.By;
-
 import core.ElementWrapper;
 import core.Log;
 import core.elements.Input;
+import lombok.Getter;
+import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {
     public static final String FIND_MESSAGE = "selenium";
@@ -16,6 +14,7 @@ public class MainPage extends BasePage {
     public SearchResultPage writeButton(String message) {
         Log.log(String.format("writting %s to Button", message));
         str.write(message);
+        str.submit();
         return new SearchResultPage();
     }
 }

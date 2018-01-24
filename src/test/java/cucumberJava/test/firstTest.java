@@ -16,9 +16,10 @@ public class firstTest implements En {
     public firstTest() {
         Given("I google (\\w+)", (String url) -> {
             SearchResultPage searchResultPage = Navitation.toMainPage().writeButton(url);
-            assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Search");
+            assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Пошук");
         });
         Then("close browser (\\w+)", (String brows) -> {
+            DriverWrapper.getDriver().close();
             DriverWrapper.getDriver().quit();
             });
 

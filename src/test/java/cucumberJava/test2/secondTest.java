@@ -17,7 +17,7 @@ public class secondTest implements En {
         Given("I google (\\w+)", (String url) -> {
             Log.log("second test");
             SearchResultPage searchResultPage = Navitation.toMainPage().writeButton(url);
-            assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Search");
+            assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Пошук");
         });
         Then("close browser (\\w+)", (String brows) -> {
             DriverWrapper.getDriver().quit();

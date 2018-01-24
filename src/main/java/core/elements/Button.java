@@ -12,4 +12,15 @@ public class Button implements IButton {
     public void click() {
         base.click();
     }
+
+    public String getButtonText(){
+        return base.getAttribute("aria-label");
+    }
+
+    public WebElement getBase() {
+        return base;
+    }
+    public String getText(){
+        return base.getText();
+    }
 }
