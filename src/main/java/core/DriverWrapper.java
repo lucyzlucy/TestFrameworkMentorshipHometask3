@@ -48,7 +48,7 @@ public class DriverWrapper {
      }
       eDriver.register(new MyEventListener());
           driver = eDriver;
-          driver.manage().window().maximize();
+//          driver.manage().window().maximize();
   }
 
     public static WebDriver getDriver() {

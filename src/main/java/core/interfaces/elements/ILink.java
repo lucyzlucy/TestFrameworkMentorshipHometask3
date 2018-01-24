@@ -1,5 +1,5 @@
 package core.interfaces.elements;
 
-public interface ILink {
+public interface ILink extends IElement{
 
 }
