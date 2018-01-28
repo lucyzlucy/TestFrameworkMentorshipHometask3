@@ -2,7 +2,7 @@ package JBehave;
 
 import ApplicationRelated.navigations.Navitation;
 import ApplicationRelated.pages.test.SearchResultPage;
-import core.Log;
+import com.epam.training.framework.core.Log;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;

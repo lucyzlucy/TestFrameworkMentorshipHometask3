@@ -1,8 +1,8 @@
 package ApplicationRelated.pages.test;
 
-import core.ElementWrapper;
-import core.Log;
-import core.elements.Input;
+import com.epam.training.framework.core.ElementWrapper;
+import com.epam.training.framework.core.Log;
+import com.epam.training.framework.core.elements.Input;
 import lombok.Getter;
 import org.openqa.selenium.By;
 

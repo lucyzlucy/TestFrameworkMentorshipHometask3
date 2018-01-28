@@ -13,8 +13,8 @@ import org.testng.annotations.Test;
 
 import ApplicationRelated.pages.test.MainPage;
 import ApplicationRelated.pages.test.SoftServeMain;
-import core.DriverWrapper;
-import core.Listener;
+import com.epam.training.framework.core.DriverWrapper;
+import com.epam.training.framework.core.Listener;
 
 @Listeners(Listener.class)
 public class TestClass {

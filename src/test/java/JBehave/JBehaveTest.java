@@ -1,13 +1,5 @@
 package JBehave;
 
-import ApplicationRelated.navigations.Navitation;
-import ApplicationRelated.pages.test.SearchResultPage;
-import core.DriverWrapper;
-import core.Log;
-import org.jbehave.core.annotations.Given;
-import org.jbehave.core.annotations.Named;
-import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.io.CodeLocations;
@@ -17,12 +9,9 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
-import org.seleniumhq.jetty9.util.annotation.Name;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by Andrii_Valkovskyi on 2/28/2017.

@@ -1,13 +1,13 @@
 package ApplicationRelated.pages.test;
 
 
-import core.AutomationWait;
-import core.DriverWrapper;
-import core.ElementWrapper;
-import core.Log;
-import core.elements.Button;
-import core.elements.Input;
-import core.elements.Link;
+import com.epam.training.framework.core.AutomationWait;
+import com.epam.training.framework.core.DriverWrapper;
+import com.epam.training.framework.core.ElementWrapper;
+import com.epam.training.framework.core.Log;
+import com.epam.training.framework.core.elements.Button;
+import com.epam.training.framework.core.elements.Input;
+import com.epam.training.framework.core.elements.Link;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;

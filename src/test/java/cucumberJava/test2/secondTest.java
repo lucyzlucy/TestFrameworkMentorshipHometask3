@@ -2,8 +2,8 @@ package cucumberJava.test2;
 
 import ApplicationRelated.navigations.Navitation;
 import ApplicationRelated.pages.test.SearchResultPage;
-import core.DriverWrapper;
-import core.Log;
+import com.epam.training.framework.core.DriverWrapper;
+import com.epam.training.framework.core.Log;
 import cucumber.api.java8.En;
 
 import static org.assertj.core.api.Assertions.assertThat;

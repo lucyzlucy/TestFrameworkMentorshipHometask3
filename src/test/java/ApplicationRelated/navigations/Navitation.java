@@ -4,8 +4,8 @@ package ApplicationRelated.navigations;
 import ApplicationRelated.pages.test.MainPage;
 import ApplicationRelated.pages.test.SoftServeMain;
 
-import core.DriverWrapper;
-import core.Log;
+import com.epam.training.framework.core.DriverWrapper;
+import com.epam.training.framework.core.Log;
 
 public class Navitation {
     
