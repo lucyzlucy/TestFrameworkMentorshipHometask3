@@ -1,4 +1,4 @@
-package JBehave;
+package jBehave;
 
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -13,9 +13,6 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Andrii_Valkovskyi on 2/28/2017.
- */
 public class JBehaveTest extends JUnitStories {
     @Override
     public Configuration configuration() {

@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import com.epam.training.framework.enums.LogType;
+
 public class Log {
     private static Logger logger = null;
     public static Logger setName(String name) {

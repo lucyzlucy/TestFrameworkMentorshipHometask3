@@ -1,4 +1,4 @@
-package ApplicationRelated.pages.test;
+package applicationPages.pages;
 
 import com.epam.training.framework.core.DriverWrapper;
 

@@ -60,15 +60,6 @@ public class MyEventListener extends AbstractWebDriverEventListener {
     @Override
     public void onException(Throwable arg0, WebDriver arg1) {
         // TODO Auto-generated method stub      
-//        ScreenshotUtils.getScreenshot(arg1, );
-//        File scrFile = ((TakesScreenshot)arg1).getScreenshotAs(OutputType.FILE);
-//     // Now you can do whatever you need to do with it, for example copy somewhere
-//        String screenName = StringGenerateUtils.getRandomStringStartsWith("Screenshot", 5);
-//        try {
-//            FileUtils.copyFile(scrFile, new File("..\\tmp\\"+screenName));
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
+
     }
 }

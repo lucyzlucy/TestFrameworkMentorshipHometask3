@@ -1,7 +1,7 @@
-package JBehave;
+package jBehave;
 
-import ApplicationRelated.navigations.Navitation;
-import ApplicationRelated.pages.test.SearchResultPage;
+import applicationPages.navigations.PageNavigationUtil;
+import applicationPages.pages.SearchResultPage;
 import com.epam.training.framework.core.Log;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
@@ -9,9 +9,6 @@ import org.jbehave.core.annotations.When;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Created by Andrii_Valkovskyi on 2/28/2017.
- */
 public class steps {
     SearchResultPage searchResultPage;
 
@@ -22,7 +19,7 @@ public class steps {
 
     @When("user google $address")
     public void google(String address) {
-        searchResultPage = Navitation.toMainPage().writeButton(address);
+        searchResultPage = PageNavigationUtil.toMainPage().writeButton(address);
 
     }
 

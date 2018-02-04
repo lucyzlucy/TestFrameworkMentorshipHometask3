@@ -1,13 +1,14 @@
-package ApplicationRelated.navigations;
+package applicationPages.navigations;
 
 
-import ApplicationRelated.pages.test.MainPage;
-import ApplicationRelated.pages.test.SoftServeMain;
+import applicationPages.pages.EpamMain;
+import applicationPages.pages.MainPage;
+import applicationPages.pages.SoftServeMain;
 
 import com.epam.training.framework.core.DriverWrapper;
 import com.epam.training.framework.core.Log;
 
-public class Navitation {
+public class PageNavigationUtil {
     
     public static void to(String url) {
         DriverWrapper.getDriver().navigate().to(url);
@@ -22,5 +23,12 @@ public class Navitation {
         DriverWrapper.getDriver().navigate().to(SoftServeMain.URL_ADDRESS);
         return new SoftServeMain();
     }
+
+    public static EpamMain toEpam() {
+        Log.log("navigation to epam.com");
+        DriverWrapper.getDriver().navigate().to(EpamMain.URL_ADDRESS);
+        return new EpamMain();
+    }
+
 
 }

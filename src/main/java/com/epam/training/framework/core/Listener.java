@@ -16,7 +16,7 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
  
     //@Override
      public void onStart(ISuite arg0) {
- 
+
         //Reporter.log("About to begin executing Suite " + arg0.getName(), true);
  
     }
@@ -56,7 +56,6 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     // This belongs to ITestListener and will execute only when the test is pass
  
     public void onTestSuccess(ITestResult arg0) {
-        //TODO String.format
         String temp = String.format("\r\n %s has passed on %s \r\n", arg0.getMethod().getMethodName(), DateFormatUtils.format(arg0.getEndMillis(),"yyyy-MM-dd hh:mm"));
         suiteResult.add(temp);
         Log.log(String.valueOf(arg0.getEndMillis()-arg0.getStartMillis()));//milliseconds of running
@@ -102,53 +101,7 @@ public class Listener implements ITestListener, ISuiteListener, IInvokedMethodLi
     }
  
     // This is the method which will be executed in case of test pass or fail
- 
-    // This will provide the information on the test
- 
-//    private void printTestResults(ITestResult result) {
-// 
-//        Reporter.log("Test Method resides in " + result.getTestClass().getName(), true);
-// 
-//        if (result.getParameters().length != 0) {
-// 
-//            String params = null;
-// 
-//            for (Object parameter : result.getParameters()) {
-// 
-//                params += parameter.toString() + ",";
-// 
-//            }
-// 
-//            Reporter.log("Test Method had the following parameters : " + params, true);
-// 
-//        }
-// 
-//        String status = null;
-// 
-//        switch (result.getStatus()) {
-// 
-//        case ITestResult.SUCCESS:
-// 
-//            status = "Pass";
-// 
-//            break;
-// 
-//        case ITestResult.FAILURE:
-// 
-//            status = "Failed";
-// 
-//            break;
-// 
-//        case ITestResult.SKIP:
-// 
-//            status = "Skipped";
-// 
-//        }
-// 
-//        Reporter.log("Test Status: " + status, true);
-// 
-//    }
-// 
+
     // This belongs to IInvokedMethodListener and will execute before every method including @Before @After @Test
  
     public void beforeInvocation(IInvokedMethod arg0, ITestResult arg1) {
