@@ -1,6 +1,6 @@
-package test;
+package fluentInterface;
 
-import applicationPages.navigations.PageNavigationUtil;
+import applicationPages.navigationUtil.PageNavigationUtil;
 import applicationPages.pages.MainPage;
 import applicationPages.pages.EpamMain;
 import com.epam.training.framework.core.Listener;

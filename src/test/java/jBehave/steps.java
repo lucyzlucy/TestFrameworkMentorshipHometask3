@@ -1,6 +1,6 @@
 package jBehave;
 
-import applicationPages.navigations.PageNavigationUtil;
+import applicationPages.navigationUtil.PageNavigationUtil;
 import applicationPages.pages.SearchResultPage;
 import com.epam.training.framework.core.Log;
 import org.jbehave.core.annotations.Given;

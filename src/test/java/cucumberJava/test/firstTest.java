@@ -1,7 +1,7 @@
 package cucumberJava.test;
 
 
-import applicationPages.navigations.PageNavigationUtil;
+import applicationPages.navigationUtil.PageNavigationUtil;
 import applicationPages.pages.SearchResultPage;
 import com.epam.training.framework.core.DriverWrapper;
 import cucumber.api.java8.En;

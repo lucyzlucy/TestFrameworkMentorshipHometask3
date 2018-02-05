@@ -1,4 +1,4 @@
-package applicationPages.navigations;
+package applicationPages.navigationUtil;
 
 
 import applicationPages.pages.EpamMain;
