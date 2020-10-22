@@ -3,10 +3,10 @@ package com.epam.training.framework.core.elements;
 import com.epam.training.framework.core.interfaces.elements.IElement;
 import org.openqa.selenium.WebElement;
 
-abstract class AbstractElement implements IElement {
+ class Element implements IElement {
     protected final WebElement base;
 
-    public AbstractElement(final WebElement base) {
+    public Element(final WebElement base) {
         this.base = base;
     }
 

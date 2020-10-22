@@ -1,12 +1,12 @@
 package applicationPages.navigationUtil;
 
 
-import applicationPages.pages.EpamMain;
-import applicationPages.pages.MainPage;
-import applicationPages.pages.SoftServeMain;
+import applicationPages.pages.*;
 
 import com.epam.training.framework.core.DriverWrapper;
 import com.epam.training.framework.core.Log;
+
+import static com.epam.training.framework.data.TestData.*;
 
 public class PageNavigationUtil {
     
@@ -14,21 +14,38 @@ public class PageNavigationUtil {
         DriverWrapper.getDriver().navigate().to(url);
     }
     public static MainPage toMainPage() {
-        Log.log("navigating to google.com");
-        DriverWrapper.getDriver().navigate().to("http://www.google.com");
+        Log.log("navigating to famo main page");
+        DriverWrapper.getDriver().navigate().to(MAIN_PAGE_URL);
         return new MainPage();
     }
-    public static SoftServeMain toSoftserve() {
-        Log.log("navigation to softserve.com");
-        DriverWrapper.getDriver().navigate().to(SoftServeMain.URL_ADDRESS);
-        return new SoftServeMain();
+
+    public static LoginPage toLoginPage() {
+        Log.log("navigating to login page");
+        DriverWrapper.getDriver().navigate().to(LOGIN_PAGE_URL);
+        return new LoginPage();
     }
 
-    public static EpamMain toEpam() {
-        Log.log("navigation to epam.com");
-        DriverWrapper.getDriver().navigate().to(EpamMain.URL_ADDRESS);
-        return new EpamMain();
+    public static RegisterPage toRegisterPage() {
+        Log.log("navigating to register page");
+        DriverWrapper.getDriver().navigate().to(REGISTER_PAGE_URL);
+        return new RegisterPage();
+    }
+    public static CataloguePage toCatalogue() {
+        Log.log("navigating to catalogue page");
+        DriverWrapper.getDriver().navigate().to(CATALOGUE_PAGE_URL);
+        return new CataloguePage();
     }
 
+    public static ProductPage toProductPage() {
+        Log.log("navigating to product page");
+        DriverWrapper.getDriver().navigate().to(PRODUCT_PAGE_URL);
+        return new ProductPage();
+    }
+
+    public static CartPage toCartPage() {
+        Log.log("navigating to cart page");
+        DriverWrapper.getDriver().navigate().to(CART_PAGE_URL);
+        return new CartPage();
+    }
 
 }

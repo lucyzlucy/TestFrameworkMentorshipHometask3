@@ -1,17 +1,11 @@
+package dataProvider;
+
 import org.testng.annotations.DataProvider;
 
 public class TestDataProvider {
-    @DataProvider
-    public Object[][] wrongPasswords() {
-        return new Object[][]{
-                {"qwerty1234$"},
-                {"QWERTY1234$"},
-                {"Qwerty1234"},
-                {"Qwerty$"}};
-    }
 
     @DataProvider
-    public Object[][] invalidEmails() {
+    public static Object[][] invalidEmails() {
         return new Object[][]{
                 {"example.com"},
                 {"A@b@c@domain.com"},
@@ -19,12 +13,10 @@ public class TestDataProvider {
     }
 
     @DataProvider
-    public Object[][] invalidPasswords() {
+    public static Object[][] invalidPasswords() {
         return new Object[][]{
-                {"Qwert1!"},
-                {"QWERTY1234$"},
-                {"qwerty1234%"},
-                {"Qwerty!@$"},
-                {"Qwerty1234"}};
+                {"abcde"},
+                {"12345"}
+        };
     }
 }

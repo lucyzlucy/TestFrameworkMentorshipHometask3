@@ -2,18 +2,18 @@ package tests.jBehave;
 
 import applicationPages.navigationUtil.PageNavigationUtil;
 import applicationPages.pages.CataloguePage;
-import com.epam.training.framework.core.Log;
-import org.jbehave.core.annotations.Given;
-import org.jbehave.core.annotations.Named;
-import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
+import applicationPages.pages.ProductPage;
+import com.epam.training.framework.core.entityBuilders.entities.Product;
+import org.jbehave.core.annotations.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.testng.Assert.assertTrue;
 
-public class steps {
+public class CatalogueSteps {
 
     CataloguePage catalogue;
-
+    ProductPage productPage;
+    Product product;
 
     @Given("user navigates to Catalogue")
     public void navigateToCatalogue() {
@@ -21,29 +21,40 @@ public class steps {
     }
 
     @When("user chooses '$category'")
+    @Given("user chooses '$category'")
     public void chooseCategory(@Named("category") String category) {
-//        searchResultPage = PageNavigationUtil.toMainPage().writeButton(address);
-
+        catalogue.chooseCategory(category);
     }
 
-//    @When("user filter results by time - $criteria")
-//    public void filterByTime(String criteria) {
-//        searchResultPage.filterResultsByTime();
-//    }
-//
-//    @Then("default time filter changed to - $criteria")
-//    public void verifyDefaultFilterChanged(String criteria){
-//        assertThat(searchResultPage.getSelectedFilter().getText()).isEqualTo("За минулі 24 години");
-//    }
-//
-//    @Then("$address search page opened")
-//    public void addressSearchPageOpened(String address) {
-//        assertThat(searchResultPage.getSearchTitle()).as("wrong text").isEqualTo("Пошук");
-//    }
-//
-//    @Then("first link contains $searchWord")
-//    public void linkContains(String searchWord) {
-//        assertThat(searchResultPage.getFirstResult()).contains(searchWord);
-//    }
+    @Then("user sees '$category' page")
+    public void checkCategoryPage(@Named("category") String category) {
+        assertThat(catalogue.getPageHeaderText().equals(category));
+    }
+
+    @Then("user sees products")
+    public void productsShown() {
+        assertTrue(catalogue.productItemIsDisplayed());
+    }
+
+    @When("user clicks on Product")
+    public void chooseProduct() {
+        product = new Product(catalogue.getProductName(), catalogue.getProductPrice());
+        productPage = catalogue.chooseProduct();
+    }
+    @Then("user navigates to Product page")
+    @Alias("user sees the correct Product title")
+        public void productPageIsShown() {
+        assertThat(productPage.getProductTitle().equals(product.getName()));
+    }
+
+    @Then("user sees the correct Product price")
+    public void productPriceIsShown() {
+        assertThat(productPage.getProductPrice().equals(product.getPrice()));
+    }
+
+    @Then("user sees available Product quantity")
+    public void productAvailableItemsIsShown() {
+        assertTrue(productPage.productAvailableQuantityIsShown());
+    }
 
 }
